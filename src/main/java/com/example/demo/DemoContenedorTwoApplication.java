@@ -18,7 +18,7 @@ public class DemoContenedorTwoApplication {
 	
 	@GetMapping("/")
 	public String welcome() {
-		return "Hola al mundo de Many con carga de trabajo y log";
+		return "Hola al mundo de Many con autoescalado";
 	}
 	
 	@GetMapping("/{input}")
@@ -33,12 +33,12 @@ public class DemoContenedorTwoApplication {
     		
     		for (int ii = 0; ii < 10; ii++) {
     	        while (true) {
-    			    iii =getRandomNumberInRange(1, 200000);
+    			    iii =getRandomNumberInRange(1, 20000);
     				LOG.info("Hola Mundo " + Integer.valueOf(iii));
     	            if (iii==1974) { break;}
     	        }
     		}    		
-            if (i==Integer.valueOf(input) + 25) { break;}
+            if (i==Integer.valueOf(input) + 20) { break;}
         }		
 		
 			
