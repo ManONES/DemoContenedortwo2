@@ -2,6 +2,8 @@ package com.example.demo;
 
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoContenedorTwoApplication {
 
+	private static Logger LOG = LoggerFactory.getLogger(DemoContenedorTwoApplication.class);
+	
 	@GetMapping("/")
 	public String welcome() {
-		return "Hola al mundo de Many con carga de trabajo";
+		return "Hola al mundo de Many con carga de trabajo y log";
 	}
 	
 	@GetMapping("/{input}")
@@ -30,10 +34,11 @@ public class DemoContenedorTwoApplication {
     		for (int ii = 0; ii < 10; ii++) {
     	        while (true) {
     			    iii =getRandomNumberInRange(1, 200000);
+    				LOG.info("Hola Mundo " + Integer.valueOf(iii));
     	            if (iii==1974) { break;}
     	        }
     		}    		
-            if (i==Integer.valueOf(input) + 50) { break;}
+            if (i==Integer.valueOf(input) + 25) { break;}
         }		
 		
 			
